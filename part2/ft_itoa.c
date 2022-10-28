@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/28 14:09:49 by jheloaho          #+#    #+#             */
+/*   Updated: 2022/10/28 14:17:46 by jheloaho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_length(long n, int len)
@@ -7,7 +19,6 @@ static int	ft_length(long n, int len)
 	i = 1;
 	if (n < 0)
 	{
-
 		n = n * -1;
 		len++;
 	}
@@ -21,8 +32,8 @@ static int	ft_length(long n, int len)
 
 static char	*ft_makestr(char *s, long n)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 1;
 	j = 0;
@@ -43,7 +54,7 @@ static char	*ft_makestr(char *s, long n)
 
 char	*ft_itoa(int n)
 {
-	int	len;
+	int		len;
 	char	*itoa;
 
 	len = ft_length(n, len);
@@ -53,4 +64,3 @@ char	*ft_itoa(int n)
 	itoa = ft_makestr(itoa, n);
 	return (itoa);
 }
-

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/28 14:00:57 by jheloaho          #+#    #+#             */
+/*   Updated: 2022/10/28 14:06:19 by jheloaho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strlcpy(char *dest, const char *src, size_t maxlen)
+char	*ft_strlcpy(char *dest, const char *src, size_t maxlen)
 {
-	const size_t	srclen;
-	
+	size_t	srclen;
+
 	srclen = ft_strlen(src);
 	if (srclen + 1 < maxlen)
 		ft_memcpy(dest, src, srclen + 1);

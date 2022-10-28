@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/28 14:11:39 by jheloaho          #+#    #+#             */
+/*   Updated: 2022/10/28 14:15:59 by jheloaho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static void	ft_free_all(char **arr, int n)
@@ -29,7 +41,7 @@ static char	**ft_word_arr(char **arr, char const *s, char c, size_t words)
 			ft_free_all(arr, n);
 		ft_strncpy(arr[n], &s[i], word_len);
 		arr[n][word_len] = '\0';
-		while (s[i] != '\0' && s[i] !* c)
+		while (s[i] != '\0' && s[i] != c)
 			i++;
 		n++;
 	}
@@ -51,4 +63,3 @@ char	**ft_split(char const *s, char c)
 	arr = ft_word_arr(arr, s, c, words);
 	return (arr);
 }
-
