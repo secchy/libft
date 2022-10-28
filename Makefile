@@ -35,9 +35,23 @@ FUNCTIONS =  ft_itoa \
 			ft_putstr_fd \
 			ft_striteri \
 
-OBJECTS = $(patsubst %, %.o, $(FUNCTIONS))
+BONUSFUNCTIONS = ft_lstsize \
+				ft_lstlast \
+				ft_lstmap \
+				ft_lstnew \
+				ft_lstadd_front \
+				ft_lstadd_back \
+				ft_lstdelone \
+				ft_lstclear \
+				ft_lstiter \
 
 FILES = $(patsubst %, %.c, $(FUNCTIONS))
+
+OBJECTS = $(patsubst %, %.o, $(FUNCTIONS))
+
+BONUSFILES = $(patsubst %, %_bonus.c, $(BONUSFUNCTIONS))
+
+BONUSOBJECTS = $(patsubst %, %_bonus.o, $(BONUSFUNCTIONS))
 
 GCC = gcc -Wall -Wextra -Werror -c
 
@@ -49,9 +63,14 @@ $(NAME):
 	ranlib $(NAME)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(BONUSOBJECTS)
 
 fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+bonus: fclean
+	$(GCC) $(FILES) $(BONUSFILES)
+	ar rc $(NAME) $(OBJECTS) $(BONUSOBJECTS)
+	ranlib $(NAME)
