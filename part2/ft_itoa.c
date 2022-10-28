@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:09:49 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 14:17:46 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:36:53 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ char	*ft_itoa(int n)
 	int		len;
 	char	*itoa;
 
+	len = 1;
 	len = ft_length(n, len);
 	itoa = (char *) malloc((len + 1) * sizeof(*itoa));
 	if (itoa == NULL)

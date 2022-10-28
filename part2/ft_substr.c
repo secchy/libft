@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:12:40 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 14:14:08 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:29:12 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub[i] = '\0';
 		i++;
 	}
-	retrn (sub);
+	return (sub);
 }

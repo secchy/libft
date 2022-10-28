@@ -6,13 +6,13 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:00:57 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 14:06:19 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:30:19 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strlcpy(char *dest, const char *src, size_t maxlen)
+size_t	ft_strlcpy(char *dest, const char *src, size_t maxlen)
 {
 	size_t	srclen;
 

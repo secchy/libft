@@ -6,11 +6,45 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:11:39 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 14:15:59 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:35:13 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	ft_wordlen(char const *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (*s)
+	{
+		if (*s != c)
+		{
+			s++;
+			i++;
+		}
+		else
+			return (i);
+	}
+	return (i);
+}
+
+static size_t	ft_count_words(const char *s, char c)
+{
+	size_t	words;
+	size_t	i;
+
+	words = 0;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if ((i == 0 || s[i - 1] == c) && s[i] != c)
+			words++;
+		i++;
+	}
+	return (words);
+}
 
 static void	ft_free_all(char **arr, int n)
 {
@@ -39,7 +73,7 @@ static char	**ft_word_arr(char **arr, char const *s, char c, size_t words)
 		arr[n] = (char *) malloc((word_len + 1) * sizeof(**arr));
 		if (!arr[n])
 			ft_free_all(arr, n);
-		ft_strncpy(arr[n], &s[i], word_len);
+		ft_strlcpy(arr[n], &s[i], word_len);
 		arr[n][word_len] = '\0';
 		while (s[i] != '\0' && s[i] != c)
 			i++;
