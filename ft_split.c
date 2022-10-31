@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:11:39 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 14:35:13 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:26:44 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static char	**ft_word_arr(char **arr, char const *s, char c, size_t words)
 		arr[n] = (char *) malloc((word_len + 1) * sizeof(**arr));
 		if (!arr[n])
 			ft_free_all(arr, n);
-		ft_strlcpy(arr[n], &s[i], word_len);
+		ft_strlcpy(arr[n], &s[i], word_len + 1);
 		arr[n][word_len] = '\0';
 		while (s[i] != '\0' && s[i] != c)
 			i++;

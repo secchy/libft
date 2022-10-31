@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:31:11 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 15:39:41 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:10:42 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	ft_lstsize(t_list *lst)
 {
 	int		i;
 
-	i = 0;
+	i = 1;
+	if (lst == NULL)
+		return (0);
 	while (lst->next != NULL)
 	{
 		lst = lst->next;
