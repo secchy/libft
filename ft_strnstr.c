@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:01:27 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/31 13:28:42 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 21:17:52 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	size_t	j;
 
 	i = 0;
-	if (*to_find == '\0' || n == 0)
+	if (*to_find == '\0')
 		return ((char *)str);
+	if (n == 0)
+		return (NULL);
 	while (str[i])
 	{
 		j = 0;
