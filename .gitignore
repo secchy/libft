@@ -1,5 +1,5 @@
 *.txt
 *.out
 *.so
-main.c
+*main.c
 test
