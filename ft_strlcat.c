@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jheloaho <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:00:47 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 14:00:50 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 12:55:25 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,30 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	j;
-	size_t	total;
+	size_t		len;
+	char		*d;
+	const char	*s;
 
-	i = ft_strlen(dest);
-	total = ft_strlen(src);
-	if (size <= i)
-		total = total + size;
-	else
-		total = total + i;
-	j = 0;
-	while (src[j] != '\0' && i + j + 1 < size)
+	d = dest;
+	s = src;
+	len = size;
+	while (len-- != 0 && *d != '\0')
 	{
-		dest[i + j] = src[j];
-		j++;
+		d++;
 	}
-	dest[i + j] = '\0';
-	return (total);
+	len = d - dest;
+	size = size - len;
+	if (size == 0)
+		return (len + ft_strlen(s));
+	while (*s != '\0')
+	{
+		if (size != 1)
+		{
+			*d++ = *s;
+			size--;
+		}
+		s++;
+	}
+	*d = '\0';
+	return (len + (s - src));
 }

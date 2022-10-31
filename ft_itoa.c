@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:09:49 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 14:36:53 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 13:22:15 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_length(long n, int len)
 		n = n * -1;
 		len++;
 	}
-	while ((n / 10) / 1 > 0)
+	while ((n / 10) / i > 0)
 	{
 		i = (i * 10);
 		len++;
@@ -32,8 +32,8 @@ static int	ft_length(long n, int len)
 
 static char	*ft_makestr(char *s, long n)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 0;
@@ -45,6 +45,12 @@ static char	*ft_makestr(char *s, long n)
 	}
 	while ((n / 10) / i > 0)
 	{
+		i = (i * 10);
+	}
+	while (i >= 1)
+	{
+		s[j] = ((n / i) + '0');
+		n = n % i;
 		i = (i / 10);
 		j++;
 	}
@@ -61,7 +67,7 @@ char	*ft_itoa(int n)
 	len = ft_length(n, len);
 	itoa = (char *) malloc((len + 1) * sizeof(*itoa));
 	if (itoa == NULL)
-		return (NULL);
+		return (0);
 	itoa = ft_makestr(itoa, n);
 	return (itoa);
 }

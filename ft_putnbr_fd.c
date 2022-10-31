@@ -6,32 +6,34 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:13:11 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 14:17:03 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 13:26:35 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
 	int	i;
 
 	i = 1;
-	if (n == -2147483648)
+	if (nb == -2147483648)
+	{
 		write(fd, "-2147483648", 11);
+	}
 	else
 	{
-		if (n < 0)
+		if (nb < 0)
 		{
 			ft_putchar_fd('-', fd);
-			n = (n * -1);
+			nb = (nb * -1);
 		}
-		while ((n / 10) / 1 > 0)
+		while ((nb / 10) / i > 0)
 			i = (i * 10);
 		while (i >= 1)
 		{
-			ft_putchar_fd((n / i) + '0', fd);
-			n = n % i;
+			ft_putchar_fd((nb / i) + '0', fd);
+			nb = nb % i;
 			i = (i / 10);
 		}
 	}
