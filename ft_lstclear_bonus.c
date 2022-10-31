@@ -6,11 +6,11 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:30:04 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 17:37:35 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 19:24:12 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -22,9 +22,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		while (list->next != NULL)
 		{
 			ft_lstdelone(list, del);
-			list = (*lst)->next;
+			list = list->next;
 		}
-		ft_lstdelone(*lst, del);
+		ft_lstdelone(list, del);
 		*lst = NULL;
 	}
 }

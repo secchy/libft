@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:00:47 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/31 12:55:25 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 19:28:30 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	s = src;
 	len = size;
 	while (len-- != 0 && *d != '\0')
-	{
 		d++;
-	}
 	len = d - dest;
 	size = size - len;
 	if (size == 0)

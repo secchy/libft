@@ -6,11 +6,11 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:45:30 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 16:03:27 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 19:24:12 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {

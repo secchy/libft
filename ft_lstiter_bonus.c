@@ -6,18 +6,21 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:33:23 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/31 14:04:48 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 19:24:12 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst && f)
+	t_list	*list;
+
+	list = lst;
+	if (list && f)
 	{
-		f(lst);
-		if (lst->next != NULL)
-			ft_lstiter(lst->next, f);
+		f(list->content);
+		if (list->next != NULL)
+			ft_lstiter(list->next, f);
 	}
 }

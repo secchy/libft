@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 13:58:21 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/31 13:34:22 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 16:52:09 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ void	*ft_calloc(size_t nelem, size_t size)
 {
 	void	*ptr;
 
-	if (nelem == 0 || size == 0)
-	{
-		nelem = size;
-		size = 1;
-	}
 	ptr = (void *) malloc(nelem * size);
 	if (!ptr)
 		return (NULL);
