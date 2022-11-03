@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jheloaho <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 14:00:27 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/28 14:00:28 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/11/03 15:31:05 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	str = (char *)s;
 	while (i <= len)
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			return (&(str[i]));
 		i++;
 	}

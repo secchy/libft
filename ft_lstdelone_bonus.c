@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:26:21 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/31 19:24:12 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/11/03 17:01:23 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!del)
+	if (!del || !lst)
 		return ;
-	if (lst != NULL)
-	{
-		del((lst)->content);
-		free(lst);
-		lst = NULL;
-	}
+	if (lst->content != NULL)
+		del(lst->content);
+	free(lst);
+	lst = NULL;
 }
