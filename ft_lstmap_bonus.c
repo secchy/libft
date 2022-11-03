@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:03:52 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/10/31 19:24:12 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/10/31 22:20:01 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*head;
@@ -21,7 +21,7 @@ t_list	*lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (0);
 	new = ft_lstnew(f(lst->content));
 	if (!new)
-		return (0);
+		return (NULL);
 	head = new;
 	lst = lst->next;
 	while (lst->next != NULL)
@@ -35,6 +35,8 @@ t_list	*lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new = new->next;
 		lst = lst->next;
 	}
+	new->next = ft_lstnew(f(lst->content));
+	new = new->next;
 	new->next = NULL;
 	return (head);
 }
