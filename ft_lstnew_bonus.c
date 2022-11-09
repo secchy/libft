@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:45:30 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/11/03 17:21:43 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/11/09 19:57:49 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
 
-	node = (t_list *) malloc(sizeof(node));
+	node = (t_list *) malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
 	node->content = content;

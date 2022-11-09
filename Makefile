@@ -53,12 +53,12 @@ BONUSFILES = $(patsubst %, %_bonus.c, $(BONUSFUNCTIONS))
 
 BONUSOBJECTS = $(patsubst %, %_bonus.o, $(BONUSFUNCTIONS))
 
-GCC = gcc -Wall -Wextra -Werror -c
+CC = cc -Wall -Wextra -Werror -c
 
 all: $(NAME)
 
 $(NAME):
-	$(GCC) $(FILES)
+	$(CC) $(FILES)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
@@ -71,6 +71,6 @@ fclean: clean
 re: fclean all
 
 bonus: fclean
-	$(GCC) $(FILES) $(BONUSFILES)
+	$(CC) $(FILES) $(BONUSFILES)
 	ar rc $(NAME) $(OBJECTS) $(BONUSOBJECTS)
 	ranlib $(NAME)

@@ -6,7 +6,7 @@
 /*   By: jheloaho <jheloaho@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 13:58:21 by jheloaho          #+#    #+#             */
-/*   Updated: 2022/11/03 18:18:28 by jheloaho         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:28:30 by jheloaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count == 0 || size == 0)
 	{
-    	count = 1;
+		count = 1;
 		size = 1;
 	}
 	bytes = count * size;
